@@ -46,10 +46,12 @@ const PhotoGallery = ({ photos, title, subtitle }: PhotoGalleryProps) => {
   };
 
   const handleClose = () => {
-  setSelectedIndex(null);
-  document.body.style.overflow = "";
-  window.dispatchEvent(new CustomEvent("photo-modal", { detail: { open: false } }));
-};
+    setSelectedIndex(null);
+    document.body.style.overflow = "";
+    window.dispatchEvent(
+      new CustomEvent("photo-modal", { detail: { open: false } }),
+    );
+  };
 
   const handlePrev = () => {
     if (selectedIndex === null) return;
@@ -107,12 +109,24 @@ const PhotoGallery = ({ photos, title, subtitle }: PhotoGalleryProps) => {
               className="gallery-card opacity-0 glass-card overflow-hidden group hover:shadow-romantic transition-all duration-300 hover:-translate-y-1 border-border/30 cursor-pointer"
             >
               <div className="aspect-[4/5] overflow-hidden bg-secondary/40">
-                <img
-                  src={photo.src}
-                  alt={photo.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                {photo.type === "video" ? (
+                  <video
+                    src={photo.src}
+                    className="w-full h-full object-cover"
+                    muted
+                    loop
+                    playsInline
+                    onMouseEnter={(e) => e.currentTarget.play()}
+                    onMouseLeave={(e) => e.currentTarget.pause()}
+                  />
+                ) : (
+                  <img
+                    src={photo.src}
+                    alt={photo.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                )}
               </div>
 
               <CardContent className="p-4">
@@ -173,11 +187,21 @@ const PhotoGallery = ({ photos, title, subtitle }: PhotoGalleryProps) => {
             <div className="grid grid-cols-1 md:grid-cols-2 min-h-[auto]">
               <div className="relative bg-gradient-to-br from-[#1b1418] via-[#21171c] to-[#140f13] flex items-center justify-center p-4 sm:p-6 md:p-8">
                 <div className="w-full h-full flex items-center justify-center rounded-[24px] overflow-hidden bg-white/5">
-                  <img
-                    src={selectedPhoto.src}
-                    alt={selectedPhoto.title}
-                    className="w-full h-full max-h-[40vh] md:max-h-[55vh] object-contain"
-                  />
+                  {selectedPhoto.type === "video" ? (
+                    <video
+                      src={selectedPhoto.src}
+                      className="w-full h-full max-h-[40vh] md:max-h-[55vh] object-contain"
+                      controls
+                      autoPlay
+                      playsInline
+                    />
+                  ) : (
+                    <img
+                      src={selectedPhoto.src}
+                      alt={selectedPhoto.title}
+                      className="w-full h-full max-h-[40vh] md:max-h-[55vh] object-contain"
+                    />
+                  )}
                 </div>
               </div>
 

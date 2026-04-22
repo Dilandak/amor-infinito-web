@@ -4,6 +4,7 @@ export type Photo = {
   title: string;
   description: string;
   year?: number;
+  type?: "image" | "video";
 };
 
 import cristal1 from "@/assets/Cristal/4f51be53-4bfc-42fb-ad5c-9f781848f7db.jpg";
