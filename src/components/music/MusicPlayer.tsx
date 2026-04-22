@@ -27,9 +27,13 @@ const formatTime = (seconds: number) => {
 
 interface MusicPlayerProps {
   startOnSignal?: boolean;
+  hidden?: boolean;
 }
 
-const MusicPlayer = ({ startOnSignal = false }: MusicPlayerProps) => {
+const MusicPlayer = ({
+  startOnSignal = false,
+  hidden = false,
+}: MusicPlayerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -39,6 +43,7 @@ const MusicPlayer = ({ startOnSignal = false }: MusicPlayerProps) => {
   const [isSeeking, setIsSeeking] = useState(false);
   const [apiReady, setApiReady] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const playerRef = useRef<any>(null);
   const progressInterval = useRef<ReturnType<typeof setInterval>>();
 
@@ -106,17 +111,10 @@ const MusicPlayer = ({ startOnSignal = false }: MusicPlayerProps) => {
           }
         },
         onReady: () => {
-          try {
-            playerRef.current.setVolume(volume);
-            playerRef.current.playVideo(); // intenta con sonido directo
-            setIsMuted(false);
-            setIsPlaying(true);
-          } catch (e) {
-            // si el navegador bloquea, fallback muteado
-            playerRef.current.mute();
-            playerRef.current.playVideo();
-            setIsMuted(true);
-          }
+          playerRef.current.setVolume(volume);
+          playerRef.current.playVideo();
+          setIsMuted(false);
+          setIsPlaying(true);
         },
       },
     });
@@ -190,10 +188,18 @@ const MusicPlayer = ({ startOnSignal = false }: MusicPlayerProps) => {
   }, [hasInteracted, volume]);
 
   useEffect(() => {
-  if (startOnSignal) {
-    handleFirstInteraction();
-  }
-}, [startOnSignal, handleFirstInteraction]);
+    if (startOnSignal) {
+      handleFirstInteraction();
+    }
+  }, [startOnSignal, handleFirstInteraction]);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      setIsHidden((e as CustomEvent).detail.open);
+    };
+    window.addEventListener("photo-modal", handler);
+    return () => window.removeEventListener("photo-modal", handler);
+  }, []);
 
   const handleSeek = (values: number[]) => {
     const t = values[0];
@@ -211,7 +217,9 @@ const MusicPlayer = ({ startOnSignal = false }: MusicPlayerProps) => {
   const progressPct = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 glass-card border-t border-border/30 px-4 pt-3 pb-3">
+    <div
+      className={`fixed bottom-0 left-0 right-0 z-40 glass-card border-t border-border/30 px-4 pt-2 pb-2 transition-transform duration-300 ${isHidden ? "translate-y-full" : "translate-y-0"}`}
+    >
       {/* Hidden YouTube player */}
       <div
         style={{
@@ -224,14 +232,6 @@ const MusicPlayer = ({ startOnSignal = false }: MusicPlayerProps) => {
         }}
       >
         <div id="yt-player" />
-      </div>
-
-      {/* Progress bar at top (visual indicator) */}
-      <div className="absolute top-0 left-0 right-0 h-0.5 bg-muted">
-        <div
-          className="h-full bg-gradient-romantic transition-all duration-300"
-          style={{ width: `${progressPct}%` }}
-        />
       </div>
 
       <div className="max-w-screen-lg mx-auto flex flex-col gap-2">
@@ -265,8 +265,8 @@ const MusicPlayer = ({ startOnSignal = false }: MusicPlayerProps) => {
         <div className="flex items-center justify-between gap-3">
           {/* Song info */}
           <div className="flex items-center gap-3 min-w-0 flex-1">
-            <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
-              <Music className="w-5 h-5 text-primary" />
+            <div className="w-8 h-8 rounded-md bg-secondary flex items-center justify-center flex-shrink-0">
+              <Music className="w-4 h-4 text-primary" />
             </div>
             <div className="min-w-0">
               <p className="text-sm font-medium text-foreground truncate">

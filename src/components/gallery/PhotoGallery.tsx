@@ -28,10 +28,10 @@ const PhotoGallery = ({ photos, title, subtitle }: PhotoGalleryProps) => {
           duration: 0.6,
           stagger: 0.08,
           ease: "power3.out",
-        }
+        },
       );
     },
-    { scope: ref, dependencies: [photos] }
+    { scope: ref, dependencies: [photos] },
   );
 
   const isOpen = selectedIndex !== null;
@@ -40,12 +40,16 @@ const PhotoGallery = ({ photos, title, subtitle }: PhotoGalleryProps) => {
   const handleOpen = (index: number) => {
     setSelectedIndex(index);
     document.body.style.overflow = "hidden";
+    window.dispatchEvent(
+      new CustomEvent("photo-modal", { detail: { open: true } }),
+    );
   };
 
   const handleClose = () => {
-    setSelectedIndex(null);
-    document.body.style.overflow = "";
-  };
+  setSelectedIndex(null);
+  document.body.style.overflow = "";
+  window.dispatchEvent(new CustomEvent("photo-modal", { detail: { open: false } }));
+};
 
   const handlePrev = () => {
     if (selectedIndex === null) return;
@@ -166,18 +170,18 @@ const PhotoGallery = ({ photos, title, subtitle }: PhotoGalleryProps) => {
               <ChevronRight className="w-6 h-6" />
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 min-h-[70vh] md:min-h-[620px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 min-h-[auto]">
               <div className="relative bg-gradient-to-br from-[#1b1418] via-[#21171c] to-[#140f13] flex items-center justify-center p-4 sm:p-6 md:p-8">
                 <div className="w-full h-full flex items-center justify-center rounded-[24px] overflow-hidden bg-white/5">
                   <img
                     src={selectedPhoto.src}
                     alt={selectedPhoto.title}
-                    className="w-full h-full max-h-[52vh] md:max-h-[78vh] object-contain"
+                    className="w-full h-full max-h-[40vh] md:max-h-[55vh] object-contain"
                   />
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 bg-gradient-to-br from-[#1a1216] to-[#120d10]">
+              <div className="flex flex-col justify-center p-5 sm:p-6 md:p-8 bg-gradient-to-br from-[#1a1216] to-[#120d10]">
                 <div className="mb-4 flex items-center gap-2 flex-wrap">
                   <span className="text-xs uppercase tracking-[0.25em] text-primary/80">
                     Recuerdo
@@ -190,7 +194,7 @@ const PhotoGallery = ({ photos, title, subtitle }: PhotoGalleryProps) => {
                   )}
                 </div>
 
-                <h3 className="text-white text-2xl sm:text-3xl lg:text-4xl font-heading font-semibold leading-tight mb-5">
+                <h3 className="text-white text-xl sm:text-2xl lg:text-3xl font-heading font-semibold leading-tight mb-3">
                   {selectedPhoto.title}
                 </h3>
 

@@ -46,7 +46,7 @@ export const couplePhotos: Photo[] = [
     title: "Santa Marta",
     description:
       "Me acuerdo de ese día en Santa Marta, un día tan lindo y tan especial. Qué felicidad es tenerte a mi lado y poder compartir todos esos momentos tan bellos contigo, amor de mi vida. Realmente te amo mucho.",
-    year: 2024,
+    year: 2023,
   },
   {
     id: "c5",
@@ -54,7 +54,7 @@ export const couplePhotos: Photo[] = [
     title: "Triunfo de Dilan",
     description:
       "Gracias por estar a mi lado en cada momento. Sé que a veces hay muchas cosas a las que no te gusta ir o te da pereza, pero estoy muy agradecido por todo eso, porque de verdad es importante para mí que estés ahí. Tú eres la que me inspira a lograr todo esto. Te amo.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "c6",
@@ -62,7 +62,7 @@ export const couplePhotos: Photo[] = [
     title: "Mi cumpleaños",
     description:
       "Ese día fue tan, pero tan hermoso. Todo lo que hiciste por mí en mi cumpleaños me hizo muy feliz. Fue uno de mis mejores cumpleaños gracias a ti. Me diste cosas que nunca imaginé y estoy muy agradecido. Te amo.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "c7",
@@ -70,7 +70,7 @@ export const couplePhotos: Photo[] = [
     title: "Concierto de Duki",
     description:
       "Cuando fuimos al concierto, ese día estuvo lleno de emociones. Pero en medio de todo, yo solo podía sentirme feliz porque eres todo lo que algún día soñé y quise tener. Te amo.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "c8",
@@ -86,7 +86,7 @@ export const couplePhotos: Photo[] = [
     title: "Premio Dilan",
     description:
       "Amor mío, me puse a pensar y veo que tú siempre estás en los momentos más importantes de mi vida. Gracias por eso, por estar siempre. En esos momentos es donde uno se da cuenta de quién vale la pena de verdad. Porque nadie estaría siempre viéndome en partidos y acompañándome así… solo tú lo haces. Y gracias por eso. Te amo.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "c10",
@@ -94,7 +94,7 @@ export const couplePhotos: Photo[] = [
     title: "Comiendo en KFC",
     description:
       "Ese día que comimos en KFC fue muy lindo, amor mío. Fuimos al centro a caminar, vimos muchas cosas bonitas, fuimos al museo y de verdad, amorcito, todo eso fue demasiado lindo. Gracias por esos momentos. Te amo.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "c11",
@@ -102,7 +102,7 @@ export const couplePhotos: Photo[] = [
     title: "Día de concierto",
     description:
       "Cuando fuimos a ese concierto tan grande y escuchamos a tanta gente jaja. Me acuerdo que no sé ni cómo hicimos, pero quedamos de primeras. Qué gran recuerdo contigo.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "c12",
@@ -110,7 +110,7 @@ export const couplePhotos: Photo[] = [
     title: "Altavista",
     description:
       "Ese día en Altavista, amor mío, qué felicidad. Fue un día muy lindo, comimos alguito, yo me acuerdo de un jugo y unas papas jaja, pero realmente fue excelente. Gracias por todo, amor mío. Te amo.",
-    year: 2024,
+    year: 2023,
   },
   {
     id: "c13",
@@ -118,7 +118,7 @@ export const couplePhotos: Photo[] = [
     title: "Panadería",
     description:
       "Gracias por acompañarme en cada lugar. En serio, cada sitio al que voy estás tú, y eso me hace muy feliz de verdad. Literalmente me acompañas a todo lado, y eso me hace muy pero muy feliz jeje. Te amo.",
-    year: 2024,
+    year: 2023,
   },
   {
     id: "c14",

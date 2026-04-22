@@ -125,7 +125,7 @@ const Index = () => {
         {section === "años" && <YearSection />}
       </main>
 
-      <MusicPlayer startOnSignal={startMusic} />
+     {startMusic && <MusicPlayer startOnSignal={startMusic} />}
     </div>
   );
 };

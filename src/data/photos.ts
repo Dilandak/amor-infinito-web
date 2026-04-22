@@ -35,7 +35,7 @@ export const herPhotos: Photo[] = [
     title: "Mi outfit favorito",
     description:
       "Ese día que salimos me acuerdo de lo hermosa que te pusiste. Eres demasiado linda, amor.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "h2",
@@ -43,7 +43,7 @@ export const herPhotos: Photo[] = [
     title: "Reencuentro en el restaurante mexicano",
     description:
       "Realmente ese día fue tan especial. Me acuerdo perfecto porque yo tenía muchos nervios y pensaba: wow, en serio estoy con la niña más hermosa de todas.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "h3",
@@ -51,7 +51,7 @@ export const herPhotos: Photo[] = [
     title: "Salida al centro comercial",
     description:
       "Cuando salimos a comer al centro comercial. En serio que me encanta tomarte fotos, eres muy pero muy hermosa y me encantas.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "h4",
@@ -59,7 +59,7 @@ export const herPhotos: Photo[] = [
     title: "Salida en Crepes & Waffles",
     description:
       "Esa salida es una de mis favoritas. Realmente estabas muy bella, me encantas amor.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "h5",
@@ -75,7 +75,7 @@ export const herPhotos: Photo[] = [
     title: "Juegos en el centro comercial",
     description:
       "Cuando fuimos a los juegos con María José jeje. Ese día fue muy divertido, una salida diferente y muy linda.",
-    year: 2024,
+    year: 2026,
   },
   {
     id: "h7",
@@ -83,7 +83,7 @@ export const herPhotos: Photo[] = [
     title: "Acompañándome en mi campeonato",
     description:
       "Gracias por acompañarme siempre en cada uno de mis partidos, así a veces no tuvieras ganas de ir jeje. Te amo mucho.",
-    year: 2024,
+    year: 2026,
   },
   {
     id: "h8",
@@ -91,7 +91,7 @@ export const herPhotos: Photo[] = [
     title: "Melgar, tú y yo",
     description:
       "Me acuerdo cuando fuimos a Melgar tú y yo. Realmente fue muy lindo, me encanta viajar a tu lado.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "h9",
@@ -99,7 +99,7 @@ export const herPhotos: Photo[] = [
     title: "Entrenamiento con Brayan",
     description:
       "Me acuerdo que ahí no podías ir a tapar porque tenías 17 años, pero siempre me acompañabas para que no estuviera solo. Te amo.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "h10",
@@ -107,7 +107,7 @@ export const herPhotos: Photo[] = [
     title: "Salida del Sena",
     description:
       "Amor de mi vida, me acuerdo que salimos de un partido mío del Sena, estaba haciendo un poco de sol y te dije: amor, déjame tomarte una foto con esos ojos tan hermosos que tienes.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "h11",
@@ -115,7 +115,7 @@ export const herPhotos: Photo[] = [
     title: "Cuando fuiste al trabajo",
     description:
       "Fue hace muy poco, pero me acuerdo mucho porque te veías espectacular con esos outfits que te compraste. Te ves hermosísima.",
-    year: 2025,
+    year: 2026,
   },
   {
     id: "h12",
@@ -131,7 +131,7 @@ export const herPhotos: Photo[] = [
     title: "Campeonato Marichuela",
     description:
       "Me acuerdo que ese día lloraste, pero no te diste por vencida. Llegaron tan lejos gracias a ti. Estoy seguro de que si no hubieras tapado tan bien como lo hiciste, no habrían llegado hasta la final. Te felicito, mi vida.",
-    year: 2024,
+    year: 2023,
   },
   {
     id: "h14",
@@ -147,7 +147,7 @@ export const herPhotos: Photo[] = [
     title: "Volviendo a tapar",
     description:
       "Hace muy poco que fuiste a jugar un amistoso, amor mío. Ese día fue muy bueno, tapaste súper bien. Te felicito.",
-    year: 2025,
+    year: 2026,
   },
   {
     id: "h16",
@@ -171,7 +171,7 @@ export const herPhotos: Photo[] = [
     title: "Salida a Monserrate",
     description:
       "Una de las primeras veces que subimos a Monserrate, amor mío jeje. Muy lindo recuerdo contigo.",
-    year: 2024,
+    year: 2023,
   },
   {
     id: "h19",
@@ -187,7 +187,7 @@ export const herPhotos: Photo[] = [
     title: "Mariachis",
     description:
       "De la misma cita del restaurante mexicano jeje. Muy lindo ese día, de verdad inolvidable para mí.",
-    year: 2024,
+    year: 2025,
   },
   {
     id: "h21",
@@ -195,6 +195,6 @@ export const herPhotos: Photo[] = [
     title: "Mi campeona",
     description:
       "Te merecías ganar, amor mío. Pero recuerda siempre que rendirse no es una opción. A seguir dándole, que eso se da porque se da. Estoy orgulloso de ti.",
-    year: 2025,
+    year: 2023,
   },
 ];

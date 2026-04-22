@@ -25,8 +25,14 @@ const PhotoModal = ({ photo, open, onOpenChange }: PhotoModalProps) => {
     }
   }, { dependencies: [open, photo?.id] });
 
+   useEffect(() => {
+  window.dispatchEvent(new CustomEvent("photo-modal", { detail: { open } }));
+}, [open]);
+
+
   if (!photo) return null;
 
+ 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl glass-card border-border/40 p-0 overflow-hidden">
